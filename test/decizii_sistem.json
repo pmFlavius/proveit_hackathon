@@ -1,0 +1,1466 @@
+[
+    {
+        "timestamp": "22:43:20",
+        "frame": 0,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": []
+    },
+    {
+        "timestamp": "22:43:20",
+        "frame": 10,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 24.5
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:21",
+        "frame": 10,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 24.5
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:21",
+        "frame": 10,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 24.5
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:22",
+        "frame": 25,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 23.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:22",
+        "frame": 35,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 22.5
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:23",
+        "frame": 40,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 22.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:23",
+        "frame": 40,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 22.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:24",
+        "frame": 55,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 20.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:24",
+        "frame": 55,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 20.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:25",
+        "frame": 55,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 20.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:25",
+        "frame": 70,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 18.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:26",
+        "frame": 80,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 18.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:26",
+        "frame": 80,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 18.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:27",
+        "frame": 90,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 16.9
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:27",
+        "frame": 90,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 16.9
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:28",
+        "frame": 100,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 15.7
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:28",
+        "frame": 110,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 14.6
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 45.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:29",
+        "frame": 110,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 14.6
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 45.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:29",
+        "frame": 125,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 14.2
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 45.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:30",
+        "frame": 125,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 14.2
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 45.0
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:30",
+        "frame": 135,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 13.8
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:31",
+        "frame": 145,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.3
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 34.8
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 31.8
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:31",
+        "frame": 145,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.3
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 34.8
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 31.8
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:32",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:32",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:33",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:33",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:34",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:34",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:35",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:35",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:36",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:36",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:37",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:37",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:38",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:38",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:39",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    },
+    {
+        "timestamp": "22:43:39",
+        "frame": 155,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            },
+            "risk_level": "scazut",
+            "reasoning": "Drum liber, se mentin parametrii actuali."
+        },
+        "detected_objects": [
+            {
+                "id": 1,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "yellow",
+                "distance": 12.6
+            },
+            {
+                "id": 96,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 40.0
+            },
+            {
+                "id": 71,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 28.4
+            },
+            {
+                "id": 76,
+                "type": "car",
+                "is_in_my_lane": false,
+                "risk_level": "green",
+                "distance": 51.4
+            }
+        ]
+    }
+]

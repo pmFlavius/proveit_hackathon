@@ -21,6 +21,8 @@ class InterfataDriveAssist:
         self.running = False
         self.render_activ = False
         self.cale_video_selectata = None
+        self.viteza_video = 60
+        self.mediu_curent = {"time_of_day": "day", "weather": "clear"}
         
         self.udp_ip = "127.0.0.1"
         self.udp_port = 5005
@@ -52,7 +54,7 @@ class InterfataDriveAssist:
         cale = filedialog.askopenfilename(initialdir=os.getcwd(), filetypes=(("Video", "*.mp4 *.avi"), ("All", "*.*")))
         if cale:
             self.cale_video_selectata = cale
-            self.label_video.config(text=f"Video pregătit: {os.path.basename(cale)}", fg="green", image="")
+            self.label_video.config(text=f"Video pregatit: {os.path.basename(cale)}", fg="green", image="")
 
     def actualizeaza_imagine_ui(self, frame):
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
