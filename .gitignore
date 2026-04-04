@@ -1,0 +1,6 @@
+env/
+venv/
+yolov8n.pt
+.idea
+/video_src
+__pycache__
