@@ -6,7 +6,7 @@ import time
 
 # --- SETUP RETEA ---
 UDP_IP = "127.0.0.1"
-UDP_PORT = 5005
+UDP_PORT = 5006
 
 state_lock = threading.Lock()
 state_data = {

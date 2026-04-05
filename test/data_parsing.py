@@ -19,8 +19,8 @@ _tracking = {}
 _TRACK_TIMEOUT = 2.0
 
 # --- Variabile globale pentru Optical Flow (Viteza Ego) ---
-_old_gray = None
-_p0 = None
+_old_gray_speed = None   # <--- Am corectat numele aici!
+_p0_speed = None         # <--- Și aici!
 _viteza_ego_estimata = 0.0
 
 # --- Variabile globale pentru Netezirea Benzilor ---
@@ -28,54 +28,60 @@ _last_pl = None
 _last_pr = None
 
 def estimeaza_viteza_ego_din_video(frame):
-    """Calculează viteza mașinii tale folosind fluxul optic (Optical Flow) pe asfalt"""
-    global _old_gray, _p0, _viteza_ego_estimata
+    global _old_gray_speed, _p0_speed, _viteza_ego_estimata
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    
     h, w = gray.shape
-    # Ne uităm doar la o zonă de pe asfaltul din fața noastră
-    roi_y1, roi_y2 = int(h * 0.7), int(h * 0.95)
-    roi_x1, roi_x2 = int(w * 0.3), int(w * 0.7)
+    
+    mask = np.zeros_like(gray)
+    mask[int(h*0.60):int(h*0.80), int(w*0.15):int(w*0.35)] = 255
+    mask[int(h*0.60):int(h*0.80), int(w*0.65):int(w*0.85)] = 255
 
-    if _old_gray is None:
-        _old_gray = gray
-        mask = np.zeros_like(gray)
-        mask[roi_y1:roi_y2, roi_x1:roi_x2] = 255
-        _p0 = cv2.goodFeaturesToTrack(gray, mask=mask, maxCorners=50, qualityLevel=0.3, minDistance=7, blockSize=7)
-        return _viteza_ego_estimata
+    # Acum variabilele coincid perfect și nu mai dă NameError
+    if _old_gray_speed is None:
+        _old_gray_speed = gray
+        _p0_speed = cv2.goodFeaturesToTrack(gray, mask=mask, maxCorners=100, qualityLevel=0.1, minDistance=5)
+        return float(round(_viteza_ego_estimata, 1))
 
-    if _p0 is not None and len(_p0) > 0:
-        p1, st, err = cv2.calcOpticalFlowPyrLK(_old_gray, gray, _p0, None)
-        if p1 is not None:
-            good_new = p1[st == 1]
-            good_old = _p0[st == 1]
+    good_new_pts = None # Plasa de siguranță
 
-            # Calculăm cât de mult s-au mutat punctele pe axa Y (în jos = mergem înainte)
-            if len(good_new) > 0:
-                y_diffs = good_new[:, 1] - good_old[:, 1]
-                valid_diffs = y_diffs[y_diffs > 0] # Luăm doar ce se mișcă spre noi
+    if _p0_speed is not None and len(_p0_speed) > 0:
+        try:
+            p1, st, err = cv2.calcOpticalFlowPyrLK(_old_gray_speed, gray, _p0_speed, None, winSize=(15, 15), maxLevel=2)
+            if p1 is not None and st is not None:
+                good_new = p1[st == 1]
+                good_old = _p0_speed[st == 1]
+                good_new_pts = good_new 
 
-                if len(valid_diffs) > 0:
-                    avg_flow = np.mean(valid_diffs)
-                    # 2.8 este o constantă de calibrare pt camera ta. Poate fi ajustată.
-                    v_inst = avg_flow * 2.8 
-                    # Smoothing pentru viteză (nu accelerează/frânează brusc)
-                    _viteza_ego_estimata = 0.8 * _viteza_ego_estimata + 0.2 * v_inst
+                if len(good_new) > 0:
+                    y_diffs = good_new[:, 1] - good_old[:, 1]
+                    valid_diffs = y_diffs[y_diffs > 0.2]
+
+                    if len(valid_diffs) > 3:
+                        median_flow = np.median(valid_diffs)
+                        v_inst = median_flow * 6.5 
+                        _viteza_ego_estimata = 0.8 * _viteza_ego_estimata + 0.2 * v_inst
+                    else:
+                        _viteza_ego_estimata *= 0.85 
                 else:
-                    _viteza_ego_estimata *= 0.95 # Pierdem viteză dacă stăm pe loc
+                    _viteza_ego_estimata *= 0.85
             else:
-                _viteza_ego_estimata *= 0.95
-                
-    # Re-detectăm puncte noi la fiecare câteva cadre pentru a nu le pierde
-    if _p0 is None or len(_p0) < 15 or np.random.random() < 0.1:
-        mask = np.zeros_like(gray)
-        mask[roi_y1:roi_y2, roi_x1:roi_x2] = 255
-        _p0 = cv2.goodFeaturesToTrack(gray, mask=mask, maxCorners=50, qualityLevel=0.3, minDistance=7, blockSize=7)
+                _viteza_ego_estimata *= 0.85
+        except Exception:
+            _viteza_ego_estimata *= 0.85
     else:
-        _p0 = good_new.reshape(-1, 1, 2)
+        _viteza_ego_estimata *= 0.85
+            
+    if good_new_pts is None or len(good_new_pts) < 20:
+        _p0_speed = cv2.goodFeaturesToTrack(gray, mask=mask, maxCorners=100, qualityLevel=0.1, minDistance=5)
+    else:
+        _p0_speed = good_new_pts.reshape(-1, 1, 2)
 
-    _old_gray = gray.copy()
-    return round(_viteza_ego_estimata, 1)
+    _old_gray_speed = gray.copy()
+    
+    if _viteza_ego_estimata < 1.5:
+        _viteza_ego_estimata = 0.0
+        
+    return float(round(_viteza_ego_estimata, 1))
 
 def _estimeaza_viteza_relativa(track_key, dist_curenta):
     global _tracking
@@ -187,10 +193,11 @@ def motor_inteligenta_artificiala(interfata, coada):
         cadru = cadru_original.copy()
         height, width = cadru.shape[:2]
 
-        # Extragem vremea și o actualizăm în interfață
+        # 1. Calculăm viteza dinamic (acum e float nativ 100% sigur)
+        viteza_masinii_noastre = float(estimeaza_viteza_ego_din_video(cadru))
+        
+        # 2. Extragem datele despre drum/vreme pentru punctajul extra (+10 pct)
         mediu_estimat = estimeaza_vreme_si_drum(cadru)
-        with interfata.data_lock:
-            interfata.mediu_curent = mediu_estimat
 
         poly_left, poly_right = obtine_limite_banda(cadru)
         results = model(cadru, verbose=False)
@@ -206,7 +213,7 @@ def motor_inteligenta_artificiala(interfata, coada):
             xtr = int(np.clip(poly_right(y_t), 0, width-1))
             overlay = cadru_adnotat.copy()
             pts = np.array([[xbl,y_b],[xtl,y_t],[xtr,y_t],[xbr,y_b]], dtype=np.int32)
-            cv2.fillPoly(overlay, [pts], (0, 150, 0)) # Am facut verdele mai discret
+            cv2.fillPoly(overlay, [pts], (0, 150, 0)) 
             cadru_adnotat = cv2.addWeighted(cadru_adnotat, 0.78, overlay, 0.22, 0)
             cv2.line(cadru_adnotat, (xbl,y_b), (xtl,y_t), (0,255,0), 3)
             cv2.line(cadru_adnotat, (xbr,y_b), (xtr,y_t), (0,255,0), 3)
@@ -221,9 +228,9 @@ def motor_inteligenta_artificiala(interfata, coada):
                     continue
 
                 x1, y1, x2, y2 = box.xyxy[0].tolist()
-                w_box    = x2 - x1
-                x_center = (x1 + x2) / 2
-                y_rot    = y2
+                w_box    = float(x2 - x1)
+                x_center = float((x1 + x2) / 2)
+                y_rot    = float(y2)
 
                 distanta = round((_KNOWN_WIDTH * _FOCAL_LENGTH) / w_box, 1) if w_box > 0 else 80.0
 
@@ -233,13 +240,13 @@ def motor_inteligenta_artificiala(interfata, coada):
 
                 banda_approx = "ego" if is_in_my_lane else ("dr" if x_center > lim_dr else "st")
                 track_key    = f"{nume_clasa}_{banda_approx}_{obj_id_counter}" 
-                viteza_rel   = _estimeaza_viteza_relativa(track_key, distanta)
+                viteza_rel   = float(_estimeaza_viteza_relativa(track_key, distanta))
 
                 obiecte_detectate.append({
-                    "id":              obj_id_counter,
-                    "type":            nume_clasa,
+                    "id":              int(obj_id_counter),
+                    "type":            str(nume_clasa),
                     "x_center":        x_center,
-                    "distanta":        distanta,
+                    "distanta":        float(distanta),
                     "is_in_my_lane":   is_in_my_lane,
                     "lim_stanga":      lim_st,
                     "lim_dreapta":     lim_dr,
@@ -248,9 +255,12 @@ def motor_inteligenta_artificiala(interfata, coada):
                 })
                 obj_id_counter += 1
 
+        # 3. Trimitem TOATE datele corecte către interfață și server
         with interfata.data_lock:
             interfata.last_detections = obiecte_detectate
             interfata.frame_count     = frame_idx
+            interfata.viteza_video    = viteza_masinii_noastre 
+            interfata.mediu_curent    = mediu_estimat 
 
         interfata.actualizeaza_imagine_ui(cadru_adnotat)
 

@@ -74,8 +74,11 @@ def run_server_side(interfata):
     print("[SERVER] Modulul ADAS a pornit.")
 
     sistem_adas = ADAS_Subject()
-    modul_retea = UDP_Observer(interfata.udp_ip, interfata.udp_port)
+    modul_retea = UDP_Observer(interfata.udp_ip, 5005)
     sistem_adas.ataseaza_observer(modul_retea)
+
+    modul_retea_3d = UDP_Observer(interfata.udp_ip, 5006) 
+    sistem_adas.ataseaza_observer(modul_retea_3d)
 
     ultimul_timp = time.time()
     interval     = 0.3
