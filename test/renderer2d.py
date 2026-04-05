@@ -29,11 +29,12 @@ DARK        = ( 10,  12,  18)
 class State:
     risk_level:       str   = "scazut"
     reasoning:        str   = "Astept date..."
-    speed_kmh:        float = 60.0
+    speed_kmh:        float = 0.0
     decision_speed:   str   = "mentinere"
     decision_brake:   str   = "fara frana"
     detected_objects: list  = field(default_factory=list)
     frame:            int   = 0
+    environment:      dict  = field(default_factory=lambda: {"surface": "necunoscut"}) # NOU
     last_update:      float = field(default_factory=time.time)
 
 state      = State()
@@ -59,6 +60,7 @@ def udp_listener():
                 state.decision_brake   = dec.get("brake", "fara frana")
                 state.detected_objects = p.get("detected_objects", [])
                 state.frame            = p.get("frame", 0)
+                state.environment      = p.get("environment", {}) # NOU
                 state.last_update      = time.time()
         except socket.timeout:
             continue
@@ -183,6 +185,10 @@ def draw_hud(surf, st, font_title, font_sm, font_tiny, connected):
     surf.blit(panel, (0, py))
     pygame.draw.line(surf, EGO, (0, py), (W, py), 3)
 
+    suprafata = st.environment.get("surface", "asfalt_uscat").replace("_", " ").upper()
+    suprafata_txt = font_tiny.render(f"DRUM: {suprafata}", True, (200, 200, 200))
+    surf.blit(suprafata_txt, (W - suprafata_txt.get_width() - 18, py + 44))
+
     risk_col = OBJ_SAME if st.risk_level == "ridicat" else OBJ_WARN if st.risk_level == "mediu" else (70, 215, 110)
     surf.blit(font_title.render(f"RISC: {st.risk_level.upper()}", True, risk_col), (18, py + 14))
 
@@ -207,6 +213,7 @@ def draw_hud(surf, st, font_title, font_sm, font_tiny, connected):
     if line: lines.append(" ".join(line))
     for i, ln in enumerate(lines[:3]):
         surf.blit(font_sm.render(ln, True, WHITE), (18, py + 96 + i * 19))
+
 
 def main():
     pygame.init()
@@ -235,6 +242,7 @@ def main():
                 detected_objects = list(state.detected_objects),
                 frame            = state.frame,
                 last_update      = state.last_update,
+                environment      = state.environment
             )
 
         connected = (time.time() - st.last_update) < 2.5
