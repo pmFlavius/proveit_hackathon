@@ -18,6 +18,65 @@ _KNOWN_WIDTH  = 1.8
 _tracking = {}
 _TRACK_TIMEOUT = 2.0
 
+# --- Variabile globale pentru Optical Flow (Viteza Ego) ---
+_old_gray = None
+_p0 = None
+_viteza_ego_estimata = 0.0
+
+# --- Variabile globale pentru Netezirea Benzilor ---
+_last_pl = None
+_last_pr = None
+
+def estimeaza_viteza_ego_din_video(frame):
+    """Calculează viteza mașinii tale folosind fluxul optic (Optical Flow) pe asfalt"""
+    global _old_gray, _p0, _viteza_ego_estimata
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    
+    h, w = gray.shape
+    # Ne uităm doar la o zonă de pe asfaltul din fața noastră
+    roi_y1, roi_y2 = int(h * 0.7), int(h * 0.95)
+    roi_x1, roi_x2 = int(w * 0.3), int(w * 0.7)
+
+    if _old_gray is None:
+        _old_gray = gray
+        mask = np.zeros_like(gray)
+        mask[roi_y1:roi_y2, roi_x1:roi_x2] = 255
+        _p0 = cv2.goodFeaturesToTrack(gray, mask=mask, maxCorners=50, qualityLevel=0.3, minDistance=7, blockSize=7)
+        return _viteza_ego_estimata
+
+    if _p0 is not None and len(_p0) > 0:
+        p1, st, err = cv2.calcOpticalFlowPyrLK(_old_gray, gray, _p0, None)
+        if p1 is not None:
+            good_new = p1[st == 1]
+            good_old = _p0[st == 1]
+
+            # Calculăm cât de mult s-au mutat punctele pe axa Y (în jos = mergem înainte)
+            if len(good_new) > 0:
+                y_diffs = good_new[:, 1] - good_old[:, 1]
+                valid_diffs = y_diffs[y_diffs > 0] # Luăm doar ce se mișcă spre noi
+
+                if len(valid_diffs) > 0:
+                    avg_flow = np.mean(valid_diffs)
+                    # 2.8 este o constantă de calibrare pt camera ta. Poate fi ajustată.
+                    v_inst = avg_flow * 2.8 
+                    # Smoothing pentru viteză (nu accelerează/frânează brusc)
+                    _viteza_ego_estimata = 0.8 * _viteza_ego_estimata + 0.2 * v_inst
+                else:
+                    _viteza_ego_estimata *= 0.95 # Pierdem viteză dacă stăm pe loc
+            else:
+                _viteza_ego_estimata *= 0.95
+                
+    # Re-detectăm puncte noi la fiecare câteva cadre pentru a nu le pierde
+    if _p0 is None or len(_p0) < 15 or np.random.random() < 0.1:
+        mask = np.zeros_like(gray)
+        mask[roi_y1:roi_y2, roi_x1:roi_x2] = 255
+        _p0 = cv2.goodFeaturesToTrack(gray, mask=mask, maxCorners=50, qualityLevel=0.3, minDistance=7, blockSize=7)
+    else:
+        _p0 = good_new.reshape(-1, 1, 2)
+
+    _old_gray = gray.copy()
+    return round(_viteza_ego_estimata, 1)
+
 def _estimeaza_viteza_relativa(track_key, dist_curenta):
     global _tracking
     now = time.time()
@@ -44,7 +103,7 @@ def estimeaza_vreme_si_drum(cadru):
         return {"time_of_day": "day", "weather": "fog", "surface": "asfalt_umed"}
     return {"time_of_day": "day", "weather": "clear", "surface": "asfalt_uscat_aderenta_optima"}
 
-def obtine_limite_banda(image):
+def obtine_limite_banda_raw(image):
     """Lane Detection Dinamic + Fallback pe coordonate fixe"""
     h, w = image.shape[:2]
     
@@ -94,6 +153,27 @@ def obtine_limite_banda(image):
         except: pass
 
     return pl_default, pr_default
+
+def obtine_limite_banda(image):
+    global _last_pl, _last_pr
+    
+    pl_raw, pr_raw = obtine_limite_banda_raw(image)
+
+    if _last_pl is None: _last_pl = pl_raw
+    if _last_pr is None: _last_pr = pr_raw
+
+    # Alpha 0.1 înseamnă că 90% din banda curentă se bazează pe istoricul stabil
+    # și doar 10% pe ce a văzut acum (excelent pt șine de tramvai)
+    alpha = 0.1 
+    
+    pl_smooth = np.poly1d(alpha * pl_raw.c + (1 - alpha) * _last_pl.c)
+    pr_smooth = np.poly1d(alpha * pr_raw.c + (1 - alpha) * _last_pr.c)
+
+    _last_pl = pl_smooth
+    _last_pr = pr_smooth
+
+    return pl_smooth, pr_smooth
+
 
 def motor_inteligenta_artificiala(interfata, coada):
     obj_id_counter = 0
