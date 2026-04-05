@@ -89,12 +89,12 @@ def _estimeaza_viteza_relativa(track_key, dist_curenta):
     if track_key in _tracking:
         dist_ant, timp_ant, viteza_ant = _tracking[track_key]
         dt = now - timp_ant
-    if 0.05 < dt < _TRACK_TIMEOUT:
-            delta = dist_ant - dist_curenta 
-            viteza_raw = (delta / dt) * 3.6 
-            viteza_smooth = 0.6 * viteza_raw + 0.4 * viteza_ant
-            _tracking[track_key] = (dist_curenta, now, viteza_smooth)
-            return round(viteza_smooth, 1)
+        if 0.05 < dt < _TRACK_TIMEOUT:
+                delta = dist_ant - dist_curenta
+                viteza_raw = (delta / dt) * 3.6
+                viteza_smooth = 0.6 * viteza_raw + 0.4 * viteza_ant
+                _tracking[track_key] = (dist_curenta, now, viteza_smooth)
+                return round(viteza_smooth, 1)
 
     _tracking[track_key] = (dist_curenta, now, 0.0)
     return 0.0

@@ -4,6 +4,7 @@ import os
 import threading
 import socket
 import cv2
+import queue
 from PIL import Image, ImageTk
 from data_parsing import process_and_parse_video
 from server_logic import run_server_side
@@ -31,6 +32,9 @@ class InterfataDriveAssist:
         # Dimensiunile fixe pentru zona video - nu se mai extinde infinit
         self.VIDEO_W = 1240
         self.VIDEO_H = 620
+
+        # Coada pentru transferul sigur al cadrelor între fire de execuție
+        self.frame_queue = queue.Queue(maxsize=2)
 
         self.construieste_ui()
 
@@ -84,6 +88,9 @@ class InterfataDriveAssist:
         )
         self.label_video.pack(expand=True)
 
+        # Pornește bucla de actualizare a imaginii din firul principal
+        self._process_frame_queue()
+
     def toggle_render(self):
         self.render_activ = not self.render_activ
         if self.render_activ:
@@ -106,25 +113,55 @@ class InterfataDriveAssist:
             )
 
     def actualizeaza_imagine_ui(self, frame):
-        """Redimensionează frame-ul să încapă în zona video fără să miște butoanele."""
-        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        """Apune cadrul în coada pentru a fi procesat în firul principal (thread-safe)."""
+        try:
+            # Încercăm să punem în coadă fără blocare
+            self.frame_queue.put_nowait(frame)
+        except queue.Full:
+            pass  # Dacă e plină, ignorăm cadrul curent
 
-        # Calculăm dimensiunea disponibilă
-        avail_w = self.frame_video.winfo_width() or self.VIDEO_W
-        avail_h = self.frame_video.winfo_height() or self.VIDEO_H
+    def _process_frame_queue(self):
+        """Procesează cadrele din coadă în firul principal Tkinter."""
+        try:
+            # Procesăm toate cadrele disponibile, păstrând doar ultimul
+            frame = None
+            while True:
+                try:
+                    frame = self.frame_queue.get_nowait()
+                except queue.Empty:
+                    break
 
-        # Menținem aspect ratio
-        fh, fw = frame_rgb.shape[:2]
-        scale = min(avail_w / fw, avail_h / fh, 1.0)
-        new_w = int(fw * scale)
-        new_h = int(fh * scale)
+            if frame is not None:
+                self._display_frame(frame)
+        except Exception:
+            pass
 
-        if new_w > 0 and new_h > 0:
-            frame_rgb = cv2.resize(frame_rgb, (new_w, new_h))
+        # Programează următoarea verificare în 16ms (~60fps)
+        self.root.after(16, self._process_frame_queue)
 
-        img_tk = ImageTk.PhotoImage(image=Image.fromarray(frame_rgb))
-        self.label_video.config(image=img_tk, text="")
-        self.label_video.image = img_tk  # păstrăm referința
+    def _display_frame(self, frame):
+        """Afișează cadrul în GUI - apelat doar din firul principal."""
+        try:
+            frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+            # Calculăm dimensiunea disponibilă
+            avail_w = self.frame_video.winfo_width() or self.VIDEO_W
+            avail_h = self.frame_video.winfo_height() or self.VIDEO_H
+
+            # Menținem aspect ratio
+            fh, fw = frame_rgb.shape[:2]
+            scale = min(avail_w / fw, avail_h / fh, 1.0)
+            new_w = int(fw * scale)
+            new_h = int(fh * scale)
+
+            if new_w > 0 and new_h > 0:
+                frame_rgb = cv2.resize(frame_rgb, (new_w, new_h))
+
+            img_tk = ImageTk.PhotoImage(image=Image.fromarray(frame_rgb))
+            self.label_video.config(image=img_tk, text="")
+            self.label_video.image = img_tk  # păstrăm referința
+        except Exception:
+            pass
 
     def start_sistem(self):
         if not self.cale_video_selectata:
