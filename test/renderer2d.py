@@ -179,7 +179,7 @@ def draw_ego(surf, font_sm):
     surf.blit(lbl, (CENTER_X - lbl.get_width() // 2, EGO_Y + 12))
 
 def draw_hud(surf, st, font_title, font_sm, font_tiny, connected):
-    py = H - HUD_H
+    py = H - HUD_H + 30
     panel = pygame.Surface((W, HUD_H), pygame.SRCALPHA)
     panel.fill((12, 15, 22, 250))
     surf.blit(panel, (0, py))

@@ -4,3 +4,6 @@ yolov8n.pt
 .idea
 /video_src
 __pycache__
+test/activitate_sistem.log
+test/decizii_sistem.json
+test/models_compressed

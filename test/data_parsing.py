@@ -40,7 +40,7 @@ def estimeaza_viteza_ego_din_video(frame):
     if _old_gray_speed is None:
         _old_gray_speed = gray
         _p0_speed = cv2.goodFeaturesToTrack(gray, mask=mask, maxCorners=100, qualityLevel=0.1, minDistance=5)
-        return float(round(_viteza_ego_estimata, 1))
+        return float(round(_viteza_ego_estimata, 1) + 90)
 
     good_new_pts = None # Plasa de siguranță
 
@@ -81,7 +81,7 @@ def estimeaza_viteza_ego_din_video(frame):
     if _viteza_ego_estimata < 1.5:
         _viteza_ego_estimata = 0.0
         
-    return float(round(_viteza_ego_estimata, 1))
+    return float(round(_viteza_ego_estimata, 1) + 90)
 
 def _estimeaza_viteza_relativa(track_key, dist_curenta):
     global _tracking
@@ -89,7 +89,7 @@ def _estimeaza_viteza_relativa(track_key, dist_curenta):
     if track_key in _tracking:
         dist_ant, timp_ant, viteza_ant = _tracking[track_key]
         dt = now - timp_ant
-        if 0.05 < dt < _TRACK_TIMEOUT:
+    if 0.05 < dt < _TRACK_TIMEOUT:
             delta = dist_ant - dist_curenta 
             viteza_raw = (delta / dt) * 3.6 
             viteza_smooth = 0.6 * viteza_raw + 0.4 * viteza_ant
