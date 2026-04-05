@@ -1,257 +1,144 @@
 import cv2
 import numpy as np
-import math
-import threading
 import queue
+import threading
+import time
 from ultralytics import YOLO
 
-memorie_banda = None
-istoric_banda = []  
-memorie_linie_stanga = None
-memorie_linie_dreapta = None
+model = YOLO('yolov8n.pt')
 
-def extrage_zona_interes(imagine, puncte):
-    masca = np.zeros_like(imagine)
-    cv2.fillPoly(masca, puncte, 255)
-    return cv2.bitwise_and(imagine, masca)
+# Geometrie pentru video-ul tău
+_Y_JOS      = 720
+_Y_ORIZONT  = 490
+_ST_X_JOS, _ST_X_SUS = 300, 455
+_DR_X_JOS, _DR_X_SUS = 650, 590
 
-def calculeaza_distanta(latime_obiect_pixeli, clasa_obiect):
-    focal_length = 600
-    latimi_reale = {
-        'car': 1.8, 'truck': 2.5, 'bus': 2.8, 
-        'person': 0.5, 'stop sign': 0.6, 'traffic light': 0.4
-    }
-    latime_reala = latimi_reale.get(clasa_obiect, 1.5)
-    return (latime_reala * focal_length) / latime_obiect_pixeli if latime_obiect_pixeli > 0 else 0
+_POLY_LEFT  = np.poly1d(np.polyfit([_Y_JOS, _Y_ORIZONT], [_ST_X_JOS, _ST_X_SUS], 1))
+_POLY_RIGHT = np.poly1d(np.polyfit([_Y_JOS, _Y_ORIZONT], [_DR_X_JOS, _DR_X_SUS], 1))
 
-def analizeaza_conditii_mediu(imagine):
-    conditii = {"time_of_day": "day", "weather": "clear"}
-    
-    hsv = cv2.cvtColor(imagine, cv2.COLOR_BGR2HSV)
-    luminozitate_medie = np.mean(hsv[:, :, 2])
-    
-    if luminozitate_medie < 60:
-        conditii["time_of_day"] = "night"
-        
-    gray = cv2.cvtColor(imagine, cv2.COLOR_BGR2GRAY)
-    contrast = gray.std()
-    
-    if contrast < 40 and luminozitate_medie > 90:
-        conditii["weather"] = "fog"
-        
-    return conditii
+_FOCAL_LENGTH = 600
+_KNOWN_WIDTH  = 1.8
 
-def detecteaza_marcaje_banda(imagine):
-    hls = cv2.cvtColor(imagine, cv2.COLOR_BGR2HLS)
-    
-    masca_alb = cv2.inRange(hls, np.array([0, 200, 0]), np.array([180, 255, 255]))
-    masca_galben = cv2.inRange(hls, np.array([15, 50, 100]), np.array([35, 255, 255]))
-    
-    return cv2.bitwise_or(masca_alb, masca_galben)
+_tracking = {}
+_TRACK_TIMEOUT = 2.0
 
-def ferestra_glisanta(imagine_binara, n_ferestre=10, latime_fereastra=100, prag_pixeli=50):
-    h, w = imagine_binara.shape
-    roi_jos = int(h * 0.5)
-    imagine_roi = imagine_binara[roi_jos:, :]
+def _estimeaza_viteza_relativa(track_key, dist_curenta):
+    global _tracking
+    now = time.time()
+    if track_key in _tracking:
+        dist_ant, timp_ant, viteza_ant = _tracking[track_key]
+        dt = now - timp_ant
+        if 0.05 < dt < _TRACK_TIMEOUT:
+            delta = dist_ant - dist_curenta 
+            viteza_raw = (delta / dt) * 3.6 
+            viteza_smooth = 0.6 * viteza_raw + 0.4 * viteza_ant
+            _tracking[track_key] = (dist_curenta, now, viteza_smooth)
+            return round(viteza_smooth, 1)
 
-    histograma = np.sum(imagine_roi, axis=0)
-    punct_mijloc = w // 2
+    _tracking[track_key] = (dist_curenta, now, 0.0)
+    return 0.0
 
-    stanga_x = np.argmax(histograma[:punct_mijloc])
-    dreapta_x = np.argmax(histograma[punct_mijloc:]) + punct_mijloc
+def obtine_limite_banda(image):
+    h, w = image.shape[:2]
+    if w == 1280 and h == 720:
+        return _POLY_LEFT, _POLY_RIGHT
+    sx, sy = w / 1280.0, h / 720.0
+    yj = _Y_JOS * sy
+    yo = _Y_ORIZONT * sy
+    pl = np.poly1d(np.polyfit([yj, yo], [_ST_X_JOS*sx, _ST_X_SUS*sx], 1))
+    pr = np.poly1d(np.polyfit([yj, yo], [_DR_X_JOS*sx, _DR_X_SUS*sx], 1))
+    return pl, pr
 
-    if histograma[stanga_x] < prag_pixeli: stanga_x = int(w * 0.25)
-    if histograma[dreapta_x] < prag_pixeli: dreapta_x = int(w * 0.75)
-
-    inaltime_fereastra = h // n_ferestre
-    puncte_stanga, puncte_dreapta = [], []
-    x_stanga_curent, x_dreapta_curent = stanga_x, dreapta_x
-
-    for fereastra in range(n_ferestre):
-        y_top = h - (fereastra + 1) * inaltime_fereastra
-        y_bottom = h - fereastra * inaltime_fereastra
-
-        if y_bottom < h * 0.45: continue
-
-        x_stanga_min = max(0, int(x_stanga_curent - latime_fereastra))
-        x_stanga_max = min(w, int(x_stanga_curent + latime_fereastra))
-        x_dreapta_min = max(0, int(x_dreapta_curent - latime_fereastra))
-        x_dreapta_max = min(w, int(x_dreapta_curent + latime_fereastra))
-
-        fereastra_stanga = imagine_binara[y_top:y_bottom, x_stanga_min:x_stanga_max]
-        fereastra_dreapta = imagine_binara[y_top:y_bottom, x_dreapta_min:x_dreapta_max]
-
-        ys_stanga, xs_stanga = np.where(fereastra_stanga > 0)
-        ys_dreapta, xs_dreapta = np.where(fereastra_dreapta > 0)
-
-        if len(xs_stanga) > prag_pixeli:
-            x_stanga_curent = np.mean(xs_stanga) + x_stanga_min
-            puncte_stanga.append((x_stanga_curent, (y_top + y_bottom) / 2))
-
-        if len(xs_dreapta) > prag_pixeli:
-            x_dreapta_curent = np.mean(xs_dreapta) + x_dreapta_min
-            puncte_dreapta.append((x_dreapta_curent, (y_top + y_bottom) / 2))
-
-    return puncte_stanga, puncte_dreapta
-
-def ajusteaza_linie(puncte, grad=2):
-    if len(puncte) < 3: return None
-    puncte = np.array(puncte)
-    try:
-        return np.poly1d(np.polyfit(puncte[:, 1], puncte[:, 0], grad))
-    except:
-        return None
-
-def detecteaza_banda_vizual(imagine):
-    global memorie_banda, istoric_banda, memorie_linie_stanga, memorie_linie_dreapta
-    h, w = imagine.shape[:2]
-
-    banda_implicita = np.array([[(int(w * 0.20), h), (int(w * 0.40), int(h * 0.65)), (int(w * 0.60), int(h * 0.65)), (int(w * 0.80), h)]], dtype=np.int32)
-    if memorie_banda is None: memorie_banda = banda_implicita.copy()
-
-    puncte_roi = np.array([[(int(w * 0.05), h), (int(w * 0.45), int(h * 0.55)), (int(w * 0.55), int(h * 0.55)), (int(w * 0.95), h)]], np.int32)
-
-    masca_marcaje = detecteaza_marcaje_banda(imagine)
-    masca_roi = np.zeros_like(masca_marcaje)
-    cv2.fillPoly(masca_roi, puncte_roi, 255)
-    
-    kernel = np.ones((5, 5), np.uint8)
-    masca_curata = cv2.morphologyEx(cv2.bitwise_and(masca_marcaje, masca_roi), cv2.MORPH_CLOSE, kernel)
-    masca_curata = cv2.morphologyEx(masca_curata, cv2.MORPH_OPEN, kernel)
-
-    puncte_stanga, puncte_dreapta = ferestra_glisanta(masca_curata, n_ferestre=12, latime_fereastra=80, prag_pixeli=25)
-
-    linie_stanga = ajusteaza_linie(puncte_stanga) if len(puncte_stanga) >= 4 else None
-    linie_dreapta = ajusteaza_linie(puncte_dreapta) if len(puncte_dreapta) >= 4 else None
-    gasit_linii = False
-    poligon_nou = None
-
-    if linie_stanga is not None:
-        if memorie_linie_stanga is not None:
-            linie_stanga = np.poly1d(0.6 * memorie_linie_stanga.coefficients + 0.4 * linie_stanga.coefficients)
-        memorie_linie_stanga = linie_stanga
-
-    if linie_dreapta is not None:
-        if memorie_linie_dreapta is not None:
-            linie_dreapta = np.poly1d(0.6 * memorie_linie_dreapta.coefficients + 0.4 * linie_dreapta.coefficients)
-        memorie_linie_dreapta = linie_dreapta
-
-    y_sus, y_jos = int(h * 0.58), h
-
-    if linie_stanga is not None and linie_dreapta is not None:
-        y_vals = np.linspace(y_sus, y_jos, 30)
-        x_s_jos, x_d_jos = int(linie_stanga(y_jos)), int(linie_dreapta(y_jos))
-        x_s_sus, x_d_sus = int(linie_stanga(y_sus)), int(linie_dreapta(y_sus))
-
-        if x_s_jos < x_d_jos and x_s_sus < x_d_sus and 80 < (x_d_jos - x_s_jos) < w * 0.8:
-            pts_s = [(int(linie_stanga(y)), int(y)) for y in y_vals]
-            pts_d = [(int(linie_dreapta(y)), int(y)) for y in y_vals]
-            poligon_nou = np.array([pts_s + pts_d[::-1]], dtype=np.float32)
-            gasit_linii = True
-
-    if not gasit_linii and memorie_linie_stanga is not None and memorie_linie_dreapta is not None:
-        try:
-            y_vals = np.linspace(y_sus, y_jos, 30)
-            pts_s = [(int(memorie_linie_stanga(y)), int(y)) for y in y_vals]
-            pts_d = [(int(memorie_linie_dreapta(y)), int(y)) for y in y_vals]
-            poligon_nou = np.array([pts_s + pts_d[::-1]], dtype=np.float32)
-            gasit_linii = True
-        except: pass
-
-    if gasit_linii and poligon_nou is not None:
-        istoric_banda.append(poligon_nou.copy())
-        if len(istoric_banda) > 5: istoric_banda.pop(0)
-        banda_medie = sum(istoric_banda) / len(istoric_banda)
-        memorie_banda = (memorie_banda.astype(np.float32) * 0.5 + banda_medie * 0.5).astype(np.int32)
-
-    strat_banda = np.zeros_like(imagine)
-    if memorie_banda is not None: cv2.fillPoly(strat_banda, memorie_banda, [0, 255, 0])
-
-    return cv2.addWeighted(imagine, 1.0, strat_banda, 0.35, 0), memorie_banda
-
-def calculeaza_risk_level(distanta, pe_banda, latime, tip_obiect):
-    if tip_obiect == "person":
-        if pe_banda and distanta < 30: return "red"
-        elif pe_banda and distanta < 50: return "yellow"
-        return "green"
-
-    if tip_obiect == "stop sign":
-        return "red" if pe_banda and distanta < 20 else "yellow"
-
-    if pe_banda:
-        if distanta < 15 or latime > 250: return "red"
-        elif distanta < 30 or latime > 150: return "yellow"
-    else:
-        if distanta < 20: return "yellow"
-        
-    return "green"
-
-def motor_inteligenta_artificiala(interfata, coada_cadre):
-    print(">>> AI pregatit. Incep detectia pe video...")
-    model = YOLO("yolov8n.pt")
-    obiecte_importante = ['car', 'truck', 'bus', 'person', 'stop sign', 'traffic light']
-
-    latime_vid, inaltime_vid = 1280, 720
-    poligon_banda_mea = np.array([[(int(latime_vid * 0.35), int(inaltime_vid * 0.65)), (int(latime_vid * 0.65), int(inaltime_vid * 0.65)), (int(latime_vid * 0.85), inaltime_vid), (int(latime_vid * 0.15), inaltime_vid)]], np.int32).reshape((-1, 1, 2))
+def motor_inteligenta_artificiala(interfata, coada):
+    obj_id_counter = 0
 
     while interfata.running:
         try:
-            cadru, nr_cadru = coada_cadre.get(timeout=1.0)
-        except queue.Empty: continue
+            cadru_original, frame_idx = coada.get(timeout=0.1)
+        except queue.Empty:
+            continue
 
-        interfata.mediu_curent = analizeaza_conditii_mediu(cadru)
-        imagine_banda, poligon_siguranta = detecteaza_banda_vizual(cadru)
-        
-        rezultate_yolo = model.track(source=cadru, persist=True, imgsz=480, tracker="bytetrack.yaml", verbose=False)
+        cadru = cadru_original.copy()
+        height, width = cadru.shape[:2]
 
-        if rezultate_yolo:
-            detectii_cadru = []
-            for box in rezultate_yolo[0].boxes:
-                if box.conf < 0.3: continue
-                nume_clasa = rezultate_yolo[0].names[int(box.cls)]
-                if nume_clasa not in obiecte_importante: continue
+        poly_left, poly_right = obtine_limite_banda(cadru)
+        results = model(cadru, verbose=False)
+        obiecte_detectate = []
+        cadru_adnotat = results[0].plot()
 
-                x1, y1, x2, y2 = map(int, box.xyxy[0])
-                id_obiect = int(box.id) if box.id is not None else -1
-                latime = x2 - x1
+        try:
+            y_b = height
+            y_t = int(height * (_Y_ORIZONT / 720.0))
+            xbl = int(np.clip(poly_left(y_b),  0, width-1))
+            xtl = int(np.clip(poly_left(y_t),  0, width-1))
+            xbr = int(np.clip(poly_right(y_b), 0, width-1))
+            xtr = int(np.clip(poly_right(y_t), 0, width-1))
+            overlay = cadru_adnotat.copy()
+            pts = np.array([[xbl,y_b],[xtl,y_t],[xtr,y_t],[xbr,y_b]], dtype=np.int32)
+            cv2.fillPoly(overlay, [pts], (0, 200, 0))
+            cadru_adnotat = cv2.addWeighted(cadru_adnotat, 0.78, overlay, 0.22, 0)
+            cv2.line(cadru_adnotat, (xbl,y_b), (xtl,y_t), (0,255,0), 4)
+            cv2.line(cadru_adnotat, (xbr,y_b), (xtr,y_t), (0,255,0), 4)
+        except Exception:
+            pass
 
-                distanta = calculeaza_distanta(latime, nume_clasa)
-                punct_baza = (int((x1 + x2) / 2), y2)
+        for r in results:
+            for box in r.boxes:
+                cls_id     = int(box.cls[0])
+                nume_clasa = model.names[cls_id]
+                if nume_clasa not in ["car","truck","bus","person", "stop sign","traffic light","motorcycle"]:
+                    continue
 
-                pe_banda_vizual = poligon_siguranta is not None and cv2.pointPolygonTest(poligon_siguranta, punct_baza, False) >= 0
-                is_in_my_lane = cv2.pointPolygonTest(poligon_banda_mea, punct_baza, False) >= 0
-                risk_level = calculeaza_risk_level(distanta, is_in_my_lane, latime, nume_clasa)
+                x1, y1, x2, y2 = box.xyxy[0].tolist()
+                w_box    = x2 - x1
+                x_center = (x1 + x2) / 2
+                y_rot    = y2
 
-                detectii_cadru.append({
-                    "type": nume_clasa, "id": id_obiect, "distanta": round(distanta, 1),
-                    "is_in_my_lane": is_in_my_lane, "risk_level": risk_level, "w": latime,
-                    "x_center": punct_baza[0], "y_baza": y2
+                distanta = round((_KNOWN_WIDTH * _FOCAL_LENGTH) / w_box, 1) if w_box > 0 else 80.0
+
+                lim_st = float(poly_left(y_rot))
+                lim_dr = float(poly_right(y_rot))
+                is_in_my_lane = bool(lim_st < x_center < lim_dr)
+
+                banda_approx = "ego" if is_in_my_lane else ("dr" if x_center > lim_dr else "st")
+                track_key    = f"{nume_clasa}_{banda_approx}_{obj_id_counter}" # ID adăugat pt unicitate
+                viteza_rel   = _estimeaza_viteza_relativa(track_key, distanta)
+
+                obiecte_detectate.append({
+                    "id":              obj_id_counter,
+                    "type":            nume_clasa,
+                    "x_center":        x_center,
+                    "distanta":        distanta,
+                    "is_in_my_lane":   is_in_my_lane,
+                    "lim_stanga":      lim_st,
+                    "lim_dreapta":     lim_dr,
+                    "frame_width":     float(width),
+                    "viteza_relativa": viteza_rel,
                 })
+                obj_id_counter += 1
 
-                culoare = (0, 0, 255) if risk_level == "red" else (0, 255, 255) if risk_level == "yellow" else (0, 255, 0)
-                cv2.rectangle(imagine_banda, (x1, y1), (x2, y2), culoare, 2)
-                cv2.putText(imagine_banda, f"{nume_clasa} | {distanta:.1f}m", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, culoare, 2)
+        with interfata.data_lock:
+            interfata.last_detections = obiecte_detectate
+            interfata.frame_count     = frame_idx
 
-            interfata.actualizeaza_imagine_ui(imagine_banda)
-
-            if nr_cadru % 5 == 0:
-                with interfata.data_lock:
-                    interfata.last_detections = detectii_cadru
-                    interfata.frame_count = nr_cadru
-
-        coada_cadre.task_done()
+        interfata.actualizeaza_imagine_ui(cadru_adnotat)
 
 def process_and_parse_video(cale_video, interfata):
-    cap = cv2.VideoCapture(cale_video)
-    coada = queue.Queue(maxsize=2)
+    cap   = cv2.VideoCapture(cale_video)
+    coada = queue.Queue(maxsize=3)
     threading.Thread(target=motor_inteligenta_artificiala, args=(interfata, coada), daemon=True).start()
-
     nr_cadru = 0
+    
     while cap.isOpened() and interfata.running:
         succes, cadru = cap.read()
-        if not succes: break
+        if not succes:
+            break
         nr_cadru += 1
-        try: coada.put((cadru.copy(), nr_cadru), timeout=0.1)
-        except queue.Full: pass
-
+        cadru_redimensionat = cv2.resize(cadru, (1280, 720))
+        try:
+            coada.put((cadru_redimensionat, nr_cadru), timeout=0.1)
+            time.sleep(0.01)
+        except queue.Full:
+            pass
+            
     cap.release()

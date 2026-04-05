@@ -1,1465 +1,5151 @@
 [
     {
-        "timestamp": "22:43:20",
-        "frame": 0,
+        "timestamp": "03:55:33",
+        "frame": 1483,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
-        },
-        "detected_objects": []
-    },
-    {
-        "timestamp": "22:43:20",
-        "frame": 10,
-        "environment": {
-            "time_of_day": "day",
-            "weather": "clear"
-        },
-        "ego_vehicle": {
-            "speed_kmh": 60,
-            "decisions": {
-                "speed": "mentinere",
-                "lane": "mentinerea benzii",
-                "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2600,
                 "type": "car",
+                "distance": 5.5,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 24.5
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2601,
+                "type": "car",
+                "distance": 13.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2602,
+                "type": "car",
+                "distance": 11.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2603,
+                "type": "truck",
+                "distance": 11.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:21",
-        "frame": 10,
+        "timestamp": "03:55:33",
+        "frame": 1486,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2604,
                 "type": "car",
+                "distance": 8.9,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 24.5
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2605,
+                "type": "car",
+                "distance": 12.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2606,
+                "type": "car",
+                "distance": 11.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2607,
+                "type": "truck",
+                "distance": 11.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:21",
-        "frame": 10,
+        "timestamp": "03:55:33",
+        "frame": 1489,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2608,
                 "type": "car",
+                "distance": 12.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 24.5
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2609,
+                "type": "car",
+                "distance": 11.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2610,
+                "type": "truck",
+                "distance": 11.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:22",
-        "frame": 25,
+        "timestamp": "03:55:33",
+        "frame": 1491,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2611,
                 "type": "car",
+                "distance": 12.0,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 23.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2612,
+                "type": "car",
+                "distance": 11.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2613,
+                "type": "person",
+                "distance": 21.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2614,
+                "type": "truck",
+                "distance": 11.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:22",
-        "frame": 35,
+        "timestamp": "03:55:34",
+        "frame": 1494,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2615,
                 "type": "car",
+                "distance": 11.7,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 22.5
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2616,
+                "type": "car",
+                "distance": 11.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2617,
+                "type": "truck",
+                "distance": 11.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2618,
+                "type": "person",
+                "distance": 16.1,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:23",
-        "frame": 40,
+        "timestamp": "03:55:34",
+        "frame": 1497,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2619,
                 "type": "car",
+                "distance": 11.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 22.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2620,
+                "type": "car",
+                "distance": 11.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:23",
-        "frame": 40,
+        "timestamp": "03:55:34",
+        "frame": 1500,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2621,
                 "type": "car",
+                "distance": 10.7,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 22.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2622,
+                "type": "car",
+                "distance": 11.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:24",
-        "frame": 55,
+        "timestamp": "03:55:35",
+        "frame": 1503,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2623,
                 "type": "car",
+                "distance": 10.4,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 20.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2624,
+                "type": "car",
+                "distance": 11.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2625,
+                "type": "person",
+                "distance": 59.4,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:24",
-        "frame": 55,
+        "timestamp": "03:55:35",
+        "frame": 1506,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2626,
                 "type": "car",
+                "distance": 9.9,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 20.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2627,
+                "type": "car",
+                "distance": 11.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:25",
-        "frame": 55,
+        "timestamp": "03:55:35",
+        "frame": 1509,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2628,
                 "type": "car",
+                "distance": 9.4,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 20.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2629,
+                "type": "car",
+                "distance": 11.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:25",
-        "frame": 70,
+        "timestamp": "03:55:36",
+        "frame": 1512,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2630,
                 "type": "car",
+                "distance": 8.8,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 18.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2631,
+                "type": "car",
+                "distance": 11.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:26",
-        "frame": 80,
+        "timestamp": "03:55:36",
+        "frame": 1519,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2634,
                 "type": "car",
+                "distance": 7.6,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 18.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2635,
+                "type": "car",
+                "distance": 12.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:26",
-        "frame": 80,
+        "timestamp": "03:55:36",
+        "frame": 1522,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2636,
                 "type": "car",
+                "distance": 7.1,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 18.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2637,
+                "type": "car",
+                "distance": 11.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2638,
+                "type": "person",
+                "distance": 51.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:27",
-        "frame": 90,
+        "timestamp": "03:55:37",
+        "frame": 1525,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2639,
                 "type": "car",
+                "distance": 6.5,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 16.9
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2640,
+                "type": "car",
+                "distance": 11.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:27",
-        "frame": 90,
+        "timestamp": "03:55:37",
+        "frame": 1527,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2641,
                 "type": "car",
+                "distance": 6.2,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 16.9
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2642,
+                "type": "car",
+                "distance": 12.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2643,
+                "type": "person",
+                "distance": 52.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2644,
+                "type": "person",
+                "distance": 58.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:28",
-        "frame": 100,
+        "timestamp": "03:55:37",
+        "frame": 1532,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2648,
                 "type": "car",
+                "distance": 5.4,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 15.7
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2649,
+                "type": "car",
+                "distance": 12.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2650,
+                "type": "person",
+                "distance": 49.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:28",
-        "frame": 110,
+        "timestamp": "03:55:37",
+        "frame": 1535,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2651,
                 "type": "car",
+                "distance": 4.8,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 14.6
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2652,
                 "type": "car",
+                "distance": 12.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2653,
+                "type": "person",
+                "distance": 48.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 45.0
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2654,
+                "type": "bus",
+                "distance": 7.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:29",
-        "frame": 110,
+        "timestamp": "03:55:38",
+        "frame": 1538,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2655,
                 "type": "car",
+                "distance": 4.4,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 14.6
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2656,
                 "type": "car",
+                "distance": 12.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2657,
+                "type": "bus",
+                "distance": 6.8,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 45.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2658,
+                "type": "person",
+                "distance": 47.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2659,
+                "type": "person",
+                "distance": 48.5,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2660,
+                "type": "car",
+                "distance": 30.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:29",
-        "frame": 125,
+        "timestamp": "03:55:38",
+        "frame": 1541,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2661,
                 "type": "car",
+                "distance": 3.9,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 14.2
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
+                "id": 2662,
                 "type": "car",
+                "distance": 12.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2663,
+                "type": "bus",
+                "distance": 6.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 45.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2664,
+                "type": "person",
+                "distance": 49.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:30",
-        "frame": 125,
+        "timestamp": "03:55:38",
+        "frame": 1543,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2665,
                 "type": "car",
+                "distance": 3.7,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 14.2
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
+                "id": 2666,
                 "type": "car",
+                "distance": 12.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2667,
+                "type": "person",
+                "distance": 47.9,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 45.0
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2668,
+                "type": "car",
+                "distance": 28.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2669,
+                "type": "person",
+                "distance": 48.3,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:30",
-        "frame": 135,
+        "timestamp": "03:55:39",
+        "frame": 1546,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2670,
                 "type": "car",
+                "distance": 4.2,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 13.8
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2671,
+                "type": "car",
+                "distance": 12.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2672,
+                "type": "person",
+                "distance": 52.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2673,
+                "type": "person",
+                "distance": 48.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:31",
-        "frame": 145,
+        "timestamp": "03:55:39",
+        "frame": 1550,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2674,
                 "type": "car",
+                "distance": 5.1,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.3
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2675,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 34.8
+                "distance": 12.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
-                "type": "car",
+                "id": 2676,
+                "type": "person",
+                "distance": 49.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 31.8
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2677,
+                "type": "person",
+                "distance": 44.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2678,
+                "type": "truck",
+                "distance": 12.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2679,
+                "type": "car",
+                "distance": 17.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2680,
+                "type": "person",
+                "distance": 41.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:31",
-        "frame": 145,
+        "timestamp": "03:55:39",
+        "frame": 1553,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2681,
                 "type": "car",
+                "distance": 6.3,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.3
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2682,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 34.8
+                "distance": 12.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2683,
                 "type": "car",
+                "distance": 13.1,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 31.8
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2684,
+                "type": "truck",
+                "distance": 12.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2685,
+                "type": "person",
+                "distance": 47.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:32",
-        "frame": 155,
+        "timestamp": "03:55:40",
+        "frame": 1556,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2686,
                 "type": "car",
+                "distance": 8.6,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2687,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "distance": 12.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2688,
                 "type": "car",
+                "distance": 12.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2689,
+                "type": "bus",
+                "distance": 5.3,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2690,
+                "type": "person",
+                "distance": 47.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:32",
-        "frame": 155,
+        "timestamp": "03:55:40",
+        "frame": 1559,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
-                "type": "car",
+                "id": 2691,
+                "type": "bus",
+                "distance": 5.1,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2692,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "distance": 12.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
-                "type": "car",
+                "id": 2693,
+                "type": "person",
+                "distance": 47.4,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2694,
+                "type": "truck",
+                "distance": 16.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2695,
+                "type": "car",
+                "distance": 15.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2696,
+                "type": "car",
+                "distance": 11.6,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2697,
+                "type": "person",
+                "distance": 49.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:33",
-        "frame": 155,
+        "timestamp": "03:55:40",
+        "frame": 1562,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2698,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 12.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
-                "type": "car",
+                "id": 2699,
+                "type": "bus",
+                "distance": 4.9,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
-                "type": "car",
+                "id": 2700,
+                "type": "person",
+                "distance": 41.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
+                "id": 2701,
                 "type": "car",
+                "distance": 20.7,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2702,
+                "type": "person",
+                "distance": 42.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2703,
+                "type": "car",
+                "distance": 14.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:33",
-        "frame": 155,
+        "timestamp": "03:55:41",
+        "frame": 1565,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
-                "type": "car",
+                "id": 2704,
+                "type": "person",
+                "distance": 41.2,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2705,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "distance": 12.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2706,
                 "type": "car",
+                "distance": 15.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2707,
+                "type": "person",
+                "distance": 48.8,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2708,
+                "type": "car",
+                "distance": 23.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2709,
+                "type": "car",
+                "distance": 36.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2710,
+                "type": "bus",
+                "distance": 4.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:34",
-        "frame": 155,
+        "timestamp": "03:55:41",
+        "frame": 1568,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
-                "type": "car",
+                "id": 2711,
+                "type": "person",
+                "distance": 39.0,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2712,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "distance": 12.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2713,
                 "type": "car",
+                "distance": 14.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
+                "id": 2714,
                 "type": "car",
+                "distance": 11.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2715,
+                "type": "person",
+                "distance": 26.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2716,
+                "type": "car",
+                "distance": 31.6,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:34",
-        "frame": 155,
+        "timestamp": "03:55:41",
+        "frame": 1571,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
-                "type": "car",
+                "id": 2717,
+                "type": "person",
+                "distance": 35.4,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2718,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "distance": 12.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2719,
                 "type": "car",
+                "distance": 10.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
+                "id": 2720,
                 "type": "car",
+                "distance": 14.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:35",
-        "frame": 155,
+        "timestamp": "03:55:41",
+        "frame": 1574,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2721,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 12.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
-                "type": "car",
+                "id": 2722,
+                "type": "person",
+                "distance": 30.0,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2723,
                 "type": "car",
+                "distance": 14.5,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2724,
+                "type": "person",
+                "distance": 28.4,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2725,
+                "type": "car",
+                "distance": 12.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:35",
-        "frame": 155,
+        "timestamp": "03:55:42",
+        "frame": 1577,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2726,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 12.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
-                "type": "car",
+                "id": 2727,
+                "type": "person",
+                "distance": 27.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2728,
                 "type": "car",
+                "distance": 13.8,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2729,
+                "type": "truck",
+                "distance": 12.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2730,
+                "type": "person",
+                "distance": 25.4,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:36",
-        "frame": 155,
+        "timestamp": "03:55:42",
+        "frame": 1580,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2731,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
-                "type": "car",
+                "id": 2732,
+                "type": "person",
+                "distance": 22.0,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2733,
                 "type": "car",
+                "distance": 14.1,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2734,
+                "type": "bus",
+                "distance": 4.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:36",
-        "frame": 155,
+        "timestamp": "03:55:42",
+        "frame": 1583,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2735,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 13.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
-                "type": "car",
+                "id": 2736,
+                "type": "person",
+                "distance": 19.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
-                "type": "car",
+                "id": 2737,
+                "type": "bus",
+                "distance": 4.1,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
+                "id": 2738,
                 "type": "car",
+                "distance": 13.8,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2739,
+                "type": "car",
+                "distance": 9.1,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2740,
+                "type": "person",
+                "distance": 41.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:37",
-        "frame": 155,
+        "timestamp": "03:55:43",
+        "frame": 1586,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2741,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 13.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2742,
                 "type": "car",
+                "distance": 13.0,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
-                "type": "car",
+                "id": 2743,
+                "type": "bus",
+                "distance": 4.0,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2744,
+                "type": "person",
+                "distance": 23.9,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2745,
+                "type": "car",
+                "distance": 9.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:37",
-        "frame": 155,
+        "timestamp": "03:55:43",
+        "frame": 1589,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2746,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 13.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2747,
                 "type": "car",
+                "distance": 13.1,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
-                "type": "car",
+                "id": 2748,
+                "type": "bus",
+                "distance": 3.9,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
-            },
-            {
-                "id": 76,
-                "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:38",
-        "frame": 155,
+        "timestamp": "03:55:43",
+        "frame": 1592,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2749,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 13.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2750,
                 "type": "car",
+                "distance": 12.1,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
-                "type": "car",
+                "id": 2751,
+                "type": "bus",
+                "distance": 3.8,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
-            },
-            {
-                "id": 76,
-                "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:38",
-        "frame": 155,
+        "timestamp": "03:55:44",
+        "frame": 1598,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2757,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "distance": 13.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2758,
                 "type": "car",
+                "distance": 11.2,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2759,
                 "type": "car",
+                "distance": 8.0,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2760,
+                "type": "person",
+                "distance": 32.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2761,
+                "type": "traffic light",
+                "distance": 26.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:39",
-        "frame": 155,
+        "timestamp": "03:55:44",
+        "frame": 1601,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2762,
                 "type": "car",
+                "distance": 11.0,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
-                "type": "car",
+                "id": 2763,
+                "type": "bus",
+                "distance": 3.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
+                "id": 2764,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2765,
+                "type": "traffic light",
+                "distance": 16.6,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2766,
+                "type": "car",
+                "distance": 7.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     },
     {
-        "timestamp": "22:43:39",
-        "frame": 155,
+        "timestamp": "03:55:44",
+        "frame": 1604,
         "environment": {
             "time_of_day": "day",
             "weather": "clear"
         },
         "ego_vehicle": {
             "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
             "decisions": {
                 "speed": "mentinere",
                 "lane": "mentinerea benzii",
                 "brake": "fara frana"
-            },
-            "risk_level": "scazut",
-            "reasoning": "Drum liber, se mentin parametrii actuali."
+            }
         },
         "detected_objects": [
             {
-                "id": 1,
+                "id": 2767,
                 "type": "car",
+                "distance": 10.5,
                 "is_in_my_lane": false,
-                "risk_level": "yellow",
-                "distance": 12.6
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 96,
+                "id": 2768,
                 "type": "car",
-                "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 40.0
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 71,
-                "type": "car",
+                "id": 2769,
+                "type": "bus",
+                "distance": 3.5,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 28.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             },
             {
-                "id": 76,
-                "type": "car",
+                "id": 2770,
+                "type": "traffic light",
+                "distance": 16.1,
                 "is_in_my_lane": false,
-                "risk_level": "green",
-                "distance": 51.4
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2771,
+                "type": "traffic light",
+                "distance": 30.3,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:45",
+        "frame": 1607,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2772,
+                "type": "car",
+                "distance": 10.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2773,
+                "type": "car",
+                "distance": 13.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2774,
+                "type": "traffic light",
+                "distance": 15.1,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2775,
+                "type": "bus",
+                "distance": 3.4,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:45",
+        "frame": 1609,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2776,
+                "type": "car",
+                "distance": 10.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2777,
+                "type": "bus",
+                "distance": 3.3,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2778,
+                "type": "car",
+                "distance": 13.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:45",
+        "frame": 1615,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2783,
+                "type": "car",
+                "distance": 9.3,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2784,
+                "type": "car",
+                "distance": 13.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2785,
+                "type": "bus",
+                "distance": 3.3,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2786,
+                "type": "car",
+                "distance": 7.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:45",
+        "frame": 1618,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2787,
+                "type": "car",
+                "distance": 8.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2788,
+                "type": "car",
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2789,
+                "type": "car",
+                "distance": 5.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2790,
+                "type": "bus",
+                "distance": 3.3,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:46",
+        "frame": 1621,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2791,
+                "type": "car",
+                "distance": 8.4,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2792,
+                "type": "car",
+                "distance": 5.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2793,
+                "type": "car",
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2794,
+                "type": "bus",
+                "distance": 3.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:46",
+        "frame": 1624,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2795,
+                "type": "car",
+                "distance": 8.1,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2796,
+                "type": "car",
+                "distance": 13.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2797,
+                "type": "car",
+                "distance": 6.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:46",
+        "frame": 1628,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2801,
+                "type": "car",
+                "distance": 7.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2802,
+                "type": "car",
+                "distance": 13.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2803,
+                "type": "car",
+                "distance": 7.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2804,
+                "type": "bus",
+                "distance": 3.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:47",
+        "frame": 1631,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2805,
+                "type": "bus",
+                "distance": 2.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2806,
+                "type": "car",
+                "distance": 13.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2807,
+                "type": "car",
+                "distance": 6.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2808,
+                "type": "car",
+                "distance": 9.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2809,
+                "type": "truck",
+                "distance": 9.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2810,
+                "type": "truck",
+                "distance": 3.5,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:47",
+        "frame": 1634,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2811,
+                "type": "car",
+                "distance": 13.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2812,
+                "type": "bus",
+                "distance": 2.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2813,
+                "type": "truck",
+                "distance": 3.5,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:47",
+        "frame": 1637,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2814,
+                "type": "car",
+                "distance": 13.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2815,
+                "type": "car",
+                "distance": 21.1,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2816,
+                "type": "car",
+                "distance": 6.5,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:48",
+        "frame": 1639,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2817,
+                "type": "car",
+                "distance": 6.3,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2818,
+                "type": "car",
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2819,
+                "type": "car",
+                "distance": 39.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:48",
+        "frame": 1642,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2820,
+                "type": "car",
+                "distance": 5.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2821,
+                "type": "car",
+                "distance": 13.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2822,
+                "type": "bus",
+                "distance": 2.7,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:48",
+        "frame": 1645,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2823,
+                "type": "car",
+                "distance": 5.6,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2824,
+                "type": "car",
+                "distance": 13.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2825,
+                "type": "bus",
+                "distance": 2.6,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:48",
+        "frame": 1650,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2828,
+                "type": "car",
+                "distance": 5.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2829,
+                "type": "car",
+                "distance": 12.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:49",
+        "frame": 1653,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2830,
+                "type": "car",
+                "distance": 7.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2831,
+                "type": "car",
+                "distance": 12.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:49",
+        "frame": 1656,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2832,
+                "type": "car",
+                "distance": 8.6,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2833,
+                "type": "car",
+                "distance": 12.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:49",
+        "frame": 1659,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2834,
+                "type": "car",
+                "distance": 12.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2835,
+                "type": "car",
+                "distance": 12.4,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:50",
+        "frame": 1664,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2838,
+                "type": "car",
+                "distance": 12.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:50",
+        "frame": 1667,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2839,
+                "type": "car",
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2840,
+                "type": "car",
+                "distance": 38.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:50",
+        "frame": 1669,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2841,
+                "type": "car",
+                "distance": 13.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2842,
+                "type": "car",
+                "distance": 35.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2843,
+                "type": "truck",
+                "distance": 13.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2844,
+                "type": "bus",
+                "distance": 1.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:51",
+        "frame": 1672,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2845,
+                "type": "car",
+                "distance": 34.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2846,
+                "type": "truck",
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2847,
+                "type": "car",
+                "distance": 13.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:51",
+        "frame": 1675,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2848,
+                "type": "car",
+                "distance": 12.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2849,
+                "type": "car",
+                "distance": 30.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:51",
+        "frame": 1677,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2850,
+                "type": "car",
+                "distance": 12.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2851,
+                "type": "car",
+                "distance": 32.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:52",
+        "frame": 1680,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2852,
+                "type": "car",
+                "distance": 12.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2853,
+                "type": "car",
+                "distance": 30.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:52",
+        "frame": 1683,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2854,
+                "type": "car",
+                "distance": 12.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2855,
+                "type": "car",
+                "distance": 28.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:52",
+        "frame": 1687,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2856,
+                "type": "car",
+                "distance": 12.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2857,
+                "type": "car",
+                "distance": 26.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:52",
+        "frame": 1690,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2858,
+                "type": "car",
+                "distance": 12.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2859,
+                "type": "car",
+                "distance": 26.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2860,
+                "type": "bus",
+                "distance": 1.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:53",
+        "frame": 1692,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2861,
+                "type": "car",
+                "distance": 25.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2862,
+                "type": "car",
+                "distance": 12.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2863,
+                "type": "bus",
+                "distance": 1.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:53",
+        "frame": 1695,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2864,
+                "type": "car",
+                "distance": 23.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2865,
+                "type": "car",
+                "distance": 12.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2866,
+                "type": "bus",
+                "distance": 1.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2867,
+                "type": "person",
+                "distance": 18.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:53",
+        "frame": 1698,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2868,
+                "type": "car",
+                "distance": 20.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2869,
+                "type": "car",
+                "distance": 12.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2870,
+                "type": "bus",
+                "distance": 1.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:54",
+        "frame": 1701,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2871,
+                "type": "car",
+                "distance": 18.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2872,
+                "type": "car",
+                "distance": 12.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2873,
+                "type": "bus",
+                "distance": 1.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:54",
+        "frame": 1704,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2874,
+                "type": "car",
+                "distance": 12.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2875,
+                "type": "car",
+                "distance": 17.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2876,
+                "type": "bus",
+                "distance": 1.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2877,
+                "type": "person",
+                "distance": 17.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:54",
+        "frame": 1706,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2878,
+                "type": "car",
+                "distance": 16.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2879,
+                "type": "car",
+                "distance": 12.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2880,
+                "type": "bus",
+                "distance": 1.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2881,
+                "type": "person",
+                "distance": 16.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2882,
+                "type": "car",
+                "distance": 48.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:55",
+        "frame": 1712,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2888,
+                "type": "car",
+                "distance": 14.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2889,
+                "type": "car",
+                "distance": 35.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2890,
+                "type": "car",
+                "distance": 12.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2891,
+                "type": "car",
+                "distance": 20.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2892,
+                "type": "car",
+                "distance": 16.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2893,
+                "type": "traffic light",
+                "distance": 28.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:55",
+        "frame": 1715,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2894,
+                "type": "car",
+                "distance": 12.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2895,
+                "type": "car",
+                "distance": 33.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2896,
+                "type": "car",
+                "distance": 12.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2897,
+                "type": "traffic light",
+                "distance": 21.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:55",
+        "frame": 1718,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2898,
+                "type": "car",
+                "distance": 10.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2899,
+                "type": "car",
+                "distance": 33.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2900,
+                "type": "car",
+                "distance": 12.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:55",
+        "frame": 1723,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2904,
+                "type": "car",
+                "distance": 8.4,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2905,
+                "type": "car",
+                "distance": 26.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2906,
+                "type": "car",
+                "distance": 12.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:56",
+        "frame": 1726,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2907,
+                "type": "car",
+                "distance": 7.2,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2908,
+                "type": "car",
+                "distance": 26.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2909,
+                "type": "car",
+                "distance": 12.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:56",
+        "frame": 1728,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2910,
+                "type": "car",
+                "distance": 6.3,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2911,
+                "type": "car",
+                "distance": 24.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2912,
+                "type": "car",
+                "distance": 12.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:56",
+        "frame": 1730,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2913,
+                "type": "car",
+                "distance": 5.4,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2914,
+                "type": "car",
+                "distance": 24.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2915,
+                "type": "car",
+                "distance": 12.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:57",
+        "frame": 1732,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2916,
+                "type": "car",
+                "distance": 4.5,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2917,
+                "type": "car",
+                "distance": 23.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2918,
+                "type": "car",
+                "distance": 12.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:57",
+        "frame": 1735,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2919,
+                "type": "car",
+                "distance": 4.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2920,
+                "type": "car",
+                "distance": 21.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2921,
+                "type": "car",
+                "distance": 12.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:57",
+        "frame": 1740,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2925,
+                "type": "car",
+                "distance": 12.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2926,
+                "type": "car",
+                "distance": 26.8,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2927,
+                "type": "car",
+                "distance": 19.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:58",
+        "frame": 1743,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2928,
+                "type": "car",
+                "distance": 16.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2929,
+                "type": "car",
+                "distance": 12.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2930,
+                "type": "truck",
+                "distance": 12.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:58",
+        "frame": 1745,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2931,
+                "type": "car",
+                "distance": 11.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2932,
+                "type": "car",
+                "distance": 16.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2933,
+                "type": "truck",
+                "distance": 11.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:58",
+        "frame": 1748,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2934,
+                "type": "car",
+                "distance": 14.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2935,
+                "type": "car",
+                "distance": 11.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2936,
+                "type": "car",
+                "distance": 35.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2937,
+                "type": "car",
+                "distance": 30.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:59",
+        "frame": 1752,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2940,
+                "type": "car",
+                "distance": 12.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2941,
+                "type": "car",
+                "distance": 11.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:59",
+        "frame": 1755,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2942,
+                "type": "car",
+                "distance": 10.6,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2943,
+                "type": "car",
+                "distance": 11.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:59",
+        "frame": 1757,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2944,
+                "type": "car",
+                "distance": 9.5,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2945,
+                "type": "car",
+                "distance": 11.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2946,
+                "type": "car",
+                "distance": 12.5,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2947,
+                "type": "person",
+                "distance": 7.5,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2948,
+                "type": "person",
+                "distance": 18.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:55:59",
+        "frame": 1760,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2949,
+                "type": "car",
+                "distance": 7.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2950,
+                "type": "car",
+                "distance": 11.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2951,
+                "type": "person",
+                "distance": 13.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:00",
+        "frame": 1763,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2952,
+                "type": "car",
+                "distance": 6.4,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2953,
+                "type": "car",
+                "distance": 10.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2954,
+                "type": "car",
+                "distance": 37.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:00",
+        "frame": 1766,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2955,
+                "type": "car",
+                "distance": 4.9,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2956,
+                "type": "car",
+                "distance": 10.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:00",
+        "frame": 1768,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2957,
+                "type": "car",
+                "distance": 4.0,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2958,
+                "type": "car",
+                "distance": 11.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2959,
+                "type": "car",
+                "distance": 37.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:01",
+        "frame": 1773,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2964,
+                "type": "car",
+                "distance": 8.4,
+                "is_in_my_lane": false,
+                "assigned_lane": "stanga",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2965,
+                "type": "car",
+                "distance": 30.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2966,
+                "type": "truck",
+                "distance": 11.2,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2967,
+                "type": "car",
+                "distance": 11.3,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:01",
+        "frame": 1776,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2968,
+                "type": "car",
+                "distance": 28.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2969,
+                "type": "car",
+                "distance": 11.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2970,
+                "type": "truck",
+                "distance": 11.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:01",
+        "frame": 1779,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2971,
+                "type": "car",
+                "distance": 24.4,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2972,
+                "type": "car",
+                "distance": 11.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2973,
+                "type": "truck",
+                "distance": 11.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:02",
+        "frame": 1782,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2974,
+                "type": "car",
+                "distance": 21.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2975,
+                "type": "car",
+                "distance": 10.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2976,
+                "type": "truck",
+                "distance": 11.0,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:02",
+        "frame": 1785,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2977,
+                "type": "car",
+                "distance": 19.1,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2978,
+                "type": "truck",
+                "distance": 10.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2979,
+                "type": "car",
+                "distance": 10.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:02",
+        "frame": 1790,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2982,
+                "type": "car",
+                "distance": 16.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2983,
+                "type": "car",
+                "distance": 10.7,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:03",
+        "frame": 1793,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2984,
+                "type": "car",
+                "distance": 14.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2985,
+                "type": "car",
+                "distance": 10.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2986,
+                "type": "traffic light",
+                "distance": 24.1,
+                "is_in_my_lane": false,
+                "assigned_lane": "dreapta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            }
+        ]
+    },
+    {
+        "timestamp": "03:56:03",
+        "frame": 1796,
+        "environment": {
+            "time_of_day": "day",
+            "weather": "clear"
+        },
+        "ego_vehicle": {
+            "speed_kmh": 60,
+            "risk_level": "scazut",
+            "reasoning": "Drum liber.",
+            "decisions": {
+                "speed": "mentinere",
+                "lane": "mentinerea benzii",
+                "brake": "fara frana"
+            }
+        },
+        "detected_objects": [
+            {
+                "id": 2987,
+                "type": "car",
+                "distance": 13.5,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2988,
+                "type": "car",
+                "distance": 10.8,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
+            },
+            {
+                "id": 2989,
+                "type": "car",
+                "distance": 37.9,
+                "is_in_my_lane": true,
+                "assigned_lane": "banda ta",
+                "viteza_rel_kmh": 0.0,
+                "ttc_sec": null
             }
         ]
     }

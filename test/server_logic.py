@@ -1,135 +1,188 @@
+import threading
 import time
 import socket
 import json
-import numpy as np
 
 class ADAS_Subject:
     def __init__(self):
         self._observers = []
-
-    def ataseaza_observer(self, observer):
-        self._observers.append(observer)
-
+    def ataseaza_observer(self, o):
+        self._observers.append(o)
     def notifica_observers(self, packet):
-        for obs in self._observers:
-            obs.update(packet)
+        for o in self._observers:
+            o.update(packet)
 
 class UDP_Observer:
     def __init__(self, ip, port):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.dest = (ip, port)
-
     def update(self, packet):
         try:
             self.sock.sendto(json.dumps(packet).encode('utf-8'), self.dest)
-        except Exception as e:
+        except Exception:
             pass
 
+def _determina_banda(obj):
+    x_center = obj.get("x_center", 640)
+    if obj.get("is_in_my_lane", False):
+        return "banda ta"
+    lim_st = obj.get("lim_stanga", None)
+    lim_dr = obj.get("lim_dreapta", None)
+    if lim_st is not None and lim_dr is not None:
+        return "stanga" if x_center < lim_st else "dreapta"
+    return "stanga" if x_center < obj.get("frame_width", 1280) / 2 else "dreapta"
+
+def _analizeaza_risc(obj, viteza_ego_kmh=60):
+    dist     = float(obj.get("distanta", 50))
+    tip      = obj.get("type", "car")
+    vrel     = float(obj.get("viteza_relativa", 0))  
+    in_lane  = obj.get("is_in_my_lane", False)
+
+    vrel_ms = vrel / 3.6
+
+    # Protecție la împarțirea cu zero / numere negative
+    if vrel_ms > 0.1:
+        ttc = dist / vrel_ms
+    else:
+        ttc = 999  
+
+    rezultat = {"nivel": 0, "ttc": round(ttc, 1), "vrel": vrel}
+
+    if not in_lane:
+        return rezultat  
+
+    if tip == "person":
+        if dist < 25: rezultat["nivel"] = 3
+        elif dist < 45: rezultat["nivel"] = 2
+        elif dist < 60: rezultat["nivel"] = 1
+        return rezultat
+
+    if dist < 10:
+        rezultat["nivel"] = 3
+    elif dist < 20 and ttc < 3.5:
+        rezultat["nivel"] = 3
+    elif dist < 35 and ttc < 6.0:
+        rezultat["nivel"] = 2
+    elif dist < 50 and ttc < 10.0 and vrel > 5:
+        rezultat["nivel"] = 1
+    elif dist < 25 and vrel < -3:
+        rezultat["nivel"] = 0
+
+    return rezultat
+
 def run_server_side(interfata):
-    print("[SERVER] Modulul decizional si retea a pornit.")
+    print("[SERVER] Modulul ADAS a pornit.")
+
     sistem_adas = ADAS_Subject()
     modul_retea = UDP_Observer(interfata.udp_ip, interfata.udp_port)
     sistem_adas.ataseaza_observer(modul_retea)
 
-    ultimul_timp_trimis = time.time()
-    interval_trimitere = 0.5
-    
-    # Inițializăm o listă globală pentru a stoca tot istoricul pachetelor JSON
-    istoric_pachete_json = []
+    ultimul_timp = time.time()
+    interval     = 0.3
+    istoric_json = []
 
     while interfata.running:
-        timp_curent = time.time()
-        
-        if timp_curent - ultimul_timp_trimis < interval_trimitere:
+        now = time.time()
+        if now - ultimul_timp < interval:
             time.sleep(0.01)
             continue
-            
-        ultimul_timp_trimis = timp_curent
+        ultimul_timp = now
 
         with interfata.data_lock:
-            obiecte = list(interfata.last_detections)
-            cadru_numar = interfata.frame_count
-            viteza_mea = getattr(interfata, 'viteza_video', 60)
-            mediu = getattr(interfata, 'mediu_curent', {"time_of_day": "day", "weather": "clear"})
+            obiecte   = list(interfata.last_detections)
+            cadru_nr  = interfata.frame_count
+            viteza_ego = getattr(interfata, 'viteza_video', 60)
+            mediu     = getattr(interfata, 'mediu_curent', {"time_of_day": "day", "weather": "clear"})
 
-        speed_dec = "mentinere"
-        lane_dec = "mentinerea benzii"
-        brake_dec = "fara frana"
-        risk_str = "scazut"
-        reasoning = "Drum liber, se mentin parametrii actuali."
-        nivel_risc_int = 1
-        
-        lista_vehicule_json = []
+        speed_dec  = "mentinere"
+        lane_dec   = "mentinerea benzii"
+        brake_dec  = "fara frana"
+        risk_str   = "scazut"
+        reasoning  = "Drum liber."
+        nivel_max  = 0
+        ttc_critic = 999
 
-        if viteza_mea < 5:
-            speed_dec = "mentinere"; brake_dec = "puternica"
-            reasoning = "Vehiculul se afla in stationare."
-        else:
-            for obj in obiecte:
-                tip = obj["type"]
-                is_in_my_lane = obj.get("is_in_my_lane", False)
-                risk_level = obj.get("risk_level", "green")
-                dist = obj.get("distanta", 0)
+        lista_json = []
 
-                lista_vehicule_json.append({
-                    "id": obj["id"], "type": tip, 
-                    "is_in_my_lane": is_in_my_lane, 
-                    "risk_level": risk_level, "distance": dist
-                })
+        for obj in obiecte:
+            banda = _determina_banda(obj)
+            risc  = _analizeaza_risc(obj, viteza_ego)
+            nivel = risc["nivel"]
+            ttc   = risc["ttc"]
+            vrel  = risc["vrel"]
+            dist  = float(obj.get("distanta", 50))
+            tip   = obj["type"]
 
-                if tip == "stop sign" and dist < 30:
-                    speed_dec = "scadere"; brake_dec = "puternica"; risk_str = "ridicat"; nivel_risc_int = 3
-                    reasoning = f"Indicator STOP la {dist}m."
-                    break 
-                
-                elif tip == "person" and is_in_my_lane:
-                    speed_dec = "scadere"; brake_dec = "puternica"; risk_str = "ridicat"; nivel_risc_int = 3
-                    reasoning = f"Pieton detectat pe banda la {dist}m."
-                    break
+            lista_json.append({
+                "id":            obj["id"],
+                "type":          tip,
+                "distance":      dist,
+                "is_in_my_lane": obj.get("is_in_my_lane", False),
+                "assigned_lane": banda,
+                "viteza_rel_kmh": vrel,
+                "ttc_sec":       ttc if ttc < 99 else None,
+            })
 
-                elif tip in ["car", "truck", "bus"] and is_in_my_lane:
-                    if risk_level == "red" or dist < 15:
-                        speed_dec = "scadere"; brake_dec = "puternica"; risk_str = "ridicat"; nivel_risc_int = 3
-                        reasoning = f"Coliziune iminenta cu {tip} la {dist}m."
-                        break
-                    elif risk_level == "yellow" or dist < 40:
-                        if nivel_risc_int < 2:
-                            speed_dec = "scadere"; brake_dec = "usoara"; risk_str = "mediu"; nivel_risc_int = 2
-                            reasoning = f"Vehicul lent detectat ({tip} la {dist}m)."
+            if nivel > nivel_max:
+                nivel_max  = nivel
+                ttc_critic = ttc
 
-        if mediu["weather"] == "fog" and nivel_risc_int < 3:
-            speed_dec = "scadere"
-            reasoning += " Vizibilitate limitata (Ceata)."
-            
-        if mediu["time_of_day"] == "night" and nivel_risc_int < 3:
-            reasoning += " Rulare pe timp de noapte."
+                if nivel == 3:
+                    speed_dec  = "scadere"
+                    brake_dec  = "puternica"
+                    risk_str   = "ridicat"
+                    if tip == "person":
+                        reasoning = f"PERICOL: pieton la {dist:.0f}m pe banda ta! Oprire!"
+                    elif ttc < 99:
+                        reasoning = f"COLIZIUNE in {ttc:.1f}s cu {tip} la {dist:.0f}m. Franare de urgenta!"
+                    else:
+                        reasoning = f"Obstacol la {dist:.0f}m pe banda ta. Franare puternica!"
+
+                elif nivel == 2:
+                    speed_dec  = "scadere"
+                    brake_dec  = "usoara"
+                    risk_str   = "mediu"
+                    if ttc < 99:
+                        reasoning = f"{tip.capitalize()} la {dist:.0f}m, TTC={ttc:.1f}s. Reduce viteza."
+                    else:
+                        reasoning = f"{tip.capitalize()} la {dist:.0f}m in fata. Mentine distanta."
+
+                elif nivel == 1:
+                    risk_str  = "mediu"
+                    reasoning = f"{tip.capitalize()} la {dist:.0f}m. Monitorizare atenta."
+
+        packet = {
+            "timestamp": time.strftime('%H:%M:%S'),
+            "frame":     cadru_nr,
+            "environment": mediu,
+            "ego_vehicle": {
+                "speed_kmh":  viteza_ego,
+                "risk_level": risk_str,
+                "reasoning":  reasoning,
+                "decisions": {
+                    "speed": speed_dec,
+                    "lane":  lane_dec,
+                    "brake": brake_dec,
+                },
+            },
+            "detected_objects": lista_json,
+        }
 
         if interfata.render_activ:
-            packet = {
-                "timestamp": time.strftime('%H:%M:%S.%f')[:-3],
-                "frame": cadru_numar,
-                "environment": mediu,
-                "ego_vehicle": {
-                    "speed_kmh": viteza_mea,
-                    "decisions": {
-                        "speed": speed_dec,
-                        "lane": lane_dec,
-                        "brake": brake_dec
-                    },
-                    "risk_level": risk_str,
-                    "reasoning": reasoning
-                },
-                "detected_objects": lista_vehicule_json
-            }
-            
             sistem_adas.notifica_observers(packet)
-            log_entry = (f"[{packet['timestamp']}] Frame {cadru_numar} | Risc: {risk_str.upper()} | "
-                         f"Mediu: {mediu['time_of_day']},{mediu['weather']} | "
-                         f"Actiune: Viteza {speed_dec}, Banda {lane_dec}, Frana {brake_dec} | "
-                         f"Motiv: {reasoning}\n")
-                         
-            with open("activitate_sistem.log", "a", encoding="utf-8") as f:
-                f.write(log_entry)
-            istoric_pachete_json.append(packet)
-            with open("decizii_sistem.json", "w", encoding="utf-8") as json_file:
-                json.dump(istoric_pachete_json, json_file, indent=4)
+
+        with open("activitate_sistem.log", "a", encoding="utf-8") as f:
+            f.write(f"[{packet['timestamp']}] F:{cadru_nr} | {risk_str} | {reasoning}\n")
+
+        istoric_json.append(packet)
+        if len(istoric_json) > 100:
+            istoric_json.pop(0)
+
+        class NumpySafe(json.JSONEncoder):
+            def default(self, obj):
+                if hasattr(obj, 'item'):
+                    return obj.item()
+                return super().default(obj)
+
+        with open("decizii_sistem.json", "w", encoding="utf-8") as jf:
+            json.dump(istoric_json, jf, indent=4, ensure_ascii=False, cls=NumpySafe)

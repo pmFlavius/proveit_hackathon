@@ -11,10 +11,11 @@ from server_logic import run_server_side
 class InterfataDriveAssist:
     def __init__(self, root):
         self.root = root
-        self.root.geometry("1280x720")
+        self.root.geometry("1280x800")
         self.root.title("Drive Assist")
-        self.root.configure(bg="#2b2b2b")
-        
+        self.root.configure(bg="#1a1a2e")
+        self.root.minsize(800, 600)
+
         self.data_lock = threading.Lock()
         self.last_detections = []
         self.frame_count = 0
@@ -23,55 +24,130 @@ class InterfataDriveAssist:
         self.cale_video_selectata = None
         self.viteza_video = 60
         self.mediu_curent = {"time_of_day": "day", "weather": "clear"}
-        
+
         self.udp_ip = "127.0.0.1"
         self.udp_port = 5005
+
+        # Dimensiunile fixe pentru zona video - nu se mai extinde infinit
+        self.VIDEO_W = 1240
+        self.VIDEO_H = 620
 
         self.construieste_ui()
 
     def construieste_ui(self):
-        self.frame_sus = tk.Frame(self.root, bg="black")
-        self.frame_sus.pack(side=tk.TOP, expand=True, fill=tk.BOTH, padx=20, pady=20)
-        self.label_video = tk.Label(self.frame_sus, text="[ SISTEM INACTIV ]\n\nINCARCA UN VIDEO", bg="black", fg="white", font=("Consolas", 20))
-        self.label_video.pack(expand=True, fill=tk.BOTH)
+        # ── Bara de sus (titlu) ──
+        header = tk.Frame(self.root, bg="#0f3460", height=40)
+        header.pack(side=tk.TOP, fill=tk.X)
+        header.pack_propagate(False)
+        tk.Label(header, text="⬡  DRIVE ASSIST  ⬡", bg="#0f3460", fg="#e94560",
+                 font=("Consolas", 14, "bold")).pack(side=tk.LEFT, padx=20, pady=8)
 
-        self.frame_jos = tk.Frame(self.root, bg="#2b2b2b", height=100)
-        self.frame_jos.pack(side=tk.BOTTOM, fill=tk.X, pady=20)
-        self.frame_jos.pack_propagate(False)
+        # ── Bara de jos cu butoane (FIXĂ - 100px) ──
+        self.frame_jos = tk.Frame(self.root, bg="#16213e", height=100)
+        self.frame_jos.pack(side=tk.BOTTOM, fill=tk.X)
+        self.frame_jos.pack_propagate(False)  # ← CHEIE: nu lasă butoanele să crească
 
-        tk.Button(self.frame_jos, text="LOAD VIDEO", font=("Arial", 14, "bold"), bg="#4CAF50", fg="white", width=15, command=self.incarca_video).pack(side=tk.LEFT, padx=50)
-        
-        self.buton_switch = tk.Button(self.frame_jos, text="ON RENDER", font=("Arial", 14, "bold"), bg="#FF9800", fg="white", width=15, command=self.toggle_render)
-        self.buton_switch.pack(side=tk.LEFT, padx=10)
+        btn_cfg = {"font": ("Consolas", 12, "bold"), "relief": "flat",
+                   "bd": 0, "padx": 20, "pady": 10, "cursor": "hand2"}
 
-        tk.Button(self.frame_jos, text="START RENDER", font=("Arial", 14, "bold"), bg="#F44336", fg="white", width=15, command=self.start_sistem).pack(side=tk.RIGHT, padx=50)
+        tk.Button(self.frame_jos, text="📂  LOAD VIDEO",
+                  bg="#4CAF50", fg="white", activebackground="#45a049",
+                  command=self.incarca_video, **btn_cfg
+                  ).pack(side=tk.LEFT, padx=30, pady=15)
+
+        self.buton_switch = tk.Button(self.frame_jos, text="○  RENDER OFF",
+                                      bg="#555", fg="white", activebackground="#666",
+                                      command=self.toggle_render, **btn_cfg)
+        self.buton_switch.pack(side=tk.LEFT, padx=10, pady=15)
+
+        self.label_status = tk.Label(self.frame_jos, text="Niciun video selectat",
+                                     bg="#16213e", fg="#888",
+                                     font=("Consolas", 10))
+        self.label_status.pack(side=tk.LEFT, padx=20)
+
+        tk.Button(self.frame_jos, text="▶  START",
+                  bg="#e94560", fg="white", activebackground="#c73652",
+                  command=self.start_sistem, **btn_cfg
+                  ).pack(side=tk.RIGHT, padx=30, pady=15)
+
+        # ── Zona video (restul spațiului, dar cu dimensiune FIXĂ a imaginii) ──
+        self.frame_video = tk.Frame(self.root, bg="black")
+        self.frame_video.pack(side=tk.TOP, expand=True, fill=tk.BOTH)
+
+        # Label-ul video cu dimensiuni fixe - nu se mai extinde
+        self.label_video = tk.Label(
+            self.frame_video,
+            text="[ SISTEM INACTIV ]\n\nÎncarcă un videoclip pentru a începe.",
+            bg="black", fg="#555",
+            font=("Consolas", 16),
+            width=self.VIDEO_W,   # ← lățime fixă în pixeli (via image)
+        )
+        self.label_video.pack(expand=True)
 
     def toggle_render(self):
         self.render_activ = not self.render_activ
-        self.buton_switch.config(text="OFF RENDER" if self.render_activ else "ON RENDER", bg="#9E9E9E" if self.render_activ else "#FF9800")
+        if self.render_activ:
+            self.buton_switch.config(text="● RENDER ON", bg="#FF9800")
+        else:
+            self.buton_switch.config(text="○ RENDER OFF", bg="#555")
 
     def incarca_video(self):
-        cale = filedialog.askopenfilename(initialdir=os.getcwd(), filetypes=(("Video", "*.mp4 *.avi"), ("All", "*.*")))
+        cale = filedialog.askopenfilename(
+            initialdir=os.getcwd(),
+            filetypes=(("Video", "*.mp4 *.avi *.mov *.mkv"), ("All", "*.*"))
+        )
         if cale:
             self.cale_video_selectata = cale
-            self.label_video.config(text=f"Video pregatit: {os.path.basename(cale)}", fg="green", image="")
+            nume = os.path.basename(cale)
+            self.label_status.config(text=f"✓ {nume}", fg="#4CAF50")
+            self.label_video.config(
+                text=f"Video pregătit:\n{nume}\n\nApasă START pentru procesare.",
+                fg="#4CAF50", image=""
+            )
 
     def actualizeaza_imagine_ui(self, frame):
+        """Redimensionează frame-ul să încapă în zona video fără să miște butoanele."""
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        # Calculăm dimensiunea disponibilă
+        avail_w = self.frame_video.winfo_width() or self.VIDEO_W
+        avail_h = self.frame_video.winfo_height() or self.VIDEO_H
+
+        # Menținem aspect ratio
+        fh, fw = frame_rgb.shape[:2]
+        scale = min(avail_w / fw, avail_h / fh, 1.0)
+        new_w = int(fw * scale)
+        new_h = int(fh * scale)
+
+        if new_w > 0 and new_h > 0:
+            frame_rgb = cv2.resize(frame_rgb, (new_w, new_h))
+
         img_tk = ImageTk.PhotoImage(image=Image.fromarray(frame_rgb))
-        self.label_video.config(image=img_tk)
-        self.label_video.image = img_tk
+        self.label_video.config(image=img_tk, text="")
+        self.label_video.image = img_tk  # păstrăm referința
 
     def start_sistem(self):
-        if not self.cale_video_selectata: return
+        if not self.cale_video_selectata:
+            self.label_status.config(text="⚠ Selectează un video mai întâi!", fg="#e94560")
+            return
         self.running = True
-        
-        threading.Thread(target=process_and_parse_video, args=(self.cale_video_selectata, self), daemon=True).start()
-        threading.Thread(target=run_server_side, args=(self, ), daemon=True).start()
+        self.label_status.config(text="▶ Sistem activ...", fg="#FF9800")
+
+        threading.Thread(
+            target=process_and_parse_video,
+            args=(self.cale_video_selectata, self),
+            daemon=True
+        ).start()
+        threading.Thread(
+            target=run_server_side,
+            args=(self,),
+            daemon=True
+        ).start()
 
     def on_closing(self):
         self.running = False
         self.root.destroy()
+
 
 if __name__ == "__main__":
     root = tk.Tk()
