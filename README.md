@@ -14,8 +14,8 @@ The system is built for zero I/O blocking and maximum fault tolerance using a **
 
 ## ✨ Key Features
 
-* **Dynamic Ego-Speed (Optical Flow):** Calculates the car's speed entirely through vision by tracking asphalt pixel movement (Lucas-Kanade), removing the need for physical speedometer data.
-* **Stable Lane Detection:** Combines Canny Edge and Hough Transforms with an IIR low-pass filter (Temporal Smoothing) to ignore visual noise like tram tracks.
+* **Stable Lane Detection:** The core of our lane tracking relies on applying **Canny Edge Detection** to isolate road markings, followed by **Hough Transforms** to map the geometric lines. We then apply an IIR low-pass filter (Temporal Smoothing) to ignore visual noise like tram tracks.
+* **Dynamic Ego-Speed:** Calculates the car's speed entirely through vision by tracking asphalt pixel movement using Optical Flow, removing the need for physical speedometer data.
 * **Threat Assessment:** Calculates real-time distance and TTC (Time-To-Collision) for vehicles, pedestrians, and traffic signs.
 * **Environment Analysis:** Analyzes HSV spectrums to detect night, fog, and road surface conditions (e.g., wet asphalt).
 * **Fail-Safe Design:** If the UI/3D renderers crash, the main AI and logic server continue to run and log decisions uninterrupted.
@@ -29,6 +29,7 @@ The system is built for zero I/O blocking and maximum fault tolerance using a **
 ```bash
 pip install ultralytics opencv-python numpy pygame ursina
 ```
+
 *(Note: The YOLOv8 model weights will download automatically on the first run).*
 
 ### Running the System
