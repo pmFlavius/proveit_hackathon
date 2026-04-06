@@ -2,6 +2,13 @@
 
 🏆 **Awarded 4th Place at ProveIT Hackathon by Magna Electronics** 🏆
 
+### 👥 Team: Stoza Code
+* **Păvălache Mihai-Flavius**
+* **Roșca Alexandru**
+* **Denis Șveț**
+
+---
+
 A Level 2 Advanced Driver Assistance System (ADAS) built in 24 hours. It uses a decoupled, Vision-Only architecture to detect lanes, track vehicles, estimate ego-speed, and calculate collision risks in real-time.
 
 ## 🏗️ Architecture
